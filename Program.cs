@@ -2,7 +2,6 @@
 
 Console.WriteLine("Welcome to Ielts calculator program");
 char select = '1';
-
 do
 {    
     PrintText("Enter the speaking score: ");
@@ -21,6 +20,8 @@ do
     decimal residue = overall % (int)overall;
     decimal avaregeScore = overall - residue + ExtractReminder(residue);
     string yourlevel = LevelName(avaregeScore);
+
+    Console.Clear();
 
     Console.ForegroundColor = ConsoleColor.Green;
     PrintParagraph($"Your overall: {avaregeScore:f1}\nyour category: {yourlevel}");
@@ -69,15 +70,18 @@ do
         }
         catch (FormatException)
         {    
-            throw new ("Qoymatning formati xato kiritildi");
+            PrintParagraph("Qiymatning formati xato kiritildi");
+            return 0;
         }
         catch (OverflowException)
         {
-            throw new ("Juda katta qiymat berilgan!");
+            PrintParagraph("Juda katta qiymat berilgan!");
+            return 0;
         }
         catch (Exception)
         {
-            throw new Exception("Qiymat xato kiritilgan!");
+            PrintParagraph("Qiymat xato kiritilgan!");
+            return 0;
         }
     }
     PrintText("Continuing to click '1' closing click any button: ");
