@@ -2,7 +2,7 @@
 
 This program is created for calculating __Ielts__ score
 
-Here is used some methods, `do while` and `try catch`
+Here is used some methods, `do while` and `try catch` operations
 
 - PrintText() method
     ```cs    
